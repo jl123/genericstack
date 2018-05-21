@@ -5,7 +5,7 @@ public class GenericStack<T>
    private int size;
    private StackNode top;
 
-   public TestStack()
+   public GenericStack()
    {
       size = 0;
       top = null;
@@ -61,8 +61,8 @@ public class GenericStack<T>
 
    public static void main(String[] args) throws StackEmptyException
    {
-      TestStack<Character> stack = new TestStack<>();
-      TestStack<Character> stack2 = new TestStack<>();
+      GenericStack<Character> stack = new GenericStack<>();
+      GenericStack<Character> stack2 = new GenericStack<>();
       String s = "0123456789";
 
       for (int i = 0; i < s.length(); i++)
