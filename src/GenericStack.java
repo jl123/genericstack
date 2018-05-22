@@ -8,6 +8,12 @@ public class GenericStack<T>
       size = 0;
       top = null;
    }
+
+   public boolean isEmpty()
+   {
+      return (size == 0);
+   }
+
    //return number of items in stack
    public int getSize()
    {
@@ -45,6 +51,25 @@ public class GenericStack<T>
          return (T) top.data;
       }
    }
+
+   public String toString()
+   {
+      String retString = "";
+      if (!isEmpty())
+      {
+         for (StackNode node = top; node != null; node = node.next)
+         {
+            retString += node.data;
+            if (node.next != null)
+            {
+               retString += " ";
+            }
+         }
+      }
+      else return "Stack Empty.";
+      return retString;
+   }
+
    //Nodes that contain data
    private class StackNode<T>
    {
@@ -76,9 +101,9 @@ public class GenericStack<T>
          stack2.push(Integer.parseInt(String.valueOf(s.charAt(i))));
       }
 
-      System.out.println("Stacck of Characters");
-      System.out.println("Character Stack size" + stack.getSize());
-      for (int i = s.length(); i >= 0; i--)
+      System.out.println("Stack of Characters");
+      System.out.println("Character Stack size " + stack.getSize());
+      while (!stack.isEmpty())
       {
          try
          {
@@ -88,6 +113,7 @@ public class GenericStack<T>
             System.out.println("Pop: " + e);
          }
       }
+
       try
       {
          System.out.println(stack.peek());
@@ -98,7 +124,8 @@ public class GenericStack<T>
       }
       System.out.println("Stack of Integers");
       System.out.println("Integer Stack size " + stack2.getSize());
-      for (int i = s.length(); i >= 0; i--)
+      System.out.println(stack2);
+      while (!stack2.isEmpty())
       {
          try
          {
