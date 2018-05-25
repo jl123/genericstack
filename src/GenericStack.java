@@ -31,7 +31,7 @@ public class GenericStack<T>
    public T pop() throws StackEmptyException
    {
       //throw error if stack empty
-      if (size == 0)
+      if (isEmpty())
          throw new StackEmptyException();
       else
       {
@@ -44,7 +44,7 @@ public class GenericStack<T>
    //return value of "top" element without removing
    public T peek() throws StackEmptyException
    {
-      if (size == 0)
+      if (isEmpty())
          throw new StackEmptyException();
       else
       {
@@ -52,6 +52,7 @@ public class GenericStack<T>
       }
    }
 
+   @Override
    public String toString()
    {
       String retString = "";
@@ -145,6 +146,7 @@ class StackEmptyException extends Exception
    public StackEmptyException()
    {
    }
+
    @Override
    public String toString()
    {
